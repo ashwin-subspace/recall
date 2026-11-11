@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingLeft="8dp" android:paddingRight="18dp" android:paddingTop="10dp">
+        <TextView android:id="@+id/btnBack" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Back"
+            android:textSize="14sp" android:textColor="@color/muted"
+            android:paddingLeft="14dp" android:paddingRight="14dp"
+            android:paddingTop="10dp" android:paddingBottom="10dp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Progress"
+            android:textSize="17sp" android:textStyle="bold" android:textColor="@color/text"
+            android:paddingLeft="4dp"/>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none"
+        android:paddingLeft="22dp" android:paddingRight="22dp"
+        android:clipToPadding="false" android:paddingBottom="30dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/pEmpty" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:visibility="gone"
+                android:textSize="15sp" android:textColor="@color/muted"
+                android:lineSpacingExtra="4dp" android:paddingTop="40dp"/>
+
+            <LinearLayout android:id="@+id/pBody" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="AVERAGE CONFIDENCE" android:textSize="11sp"
+                    android:textStyle="bold" android:letterSpacing="0.16"
+                    android:textColor="@color/faint" android:paddingTop="12dp"/>
+                <TextView android:id="@+id/pAvg" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="46sp"
+                    android:textStyle="bold" android:textColor="@color/accent"
+                    android:paddingTop="6dp"/>
+                <TextView android:id="@+id/pAvgNote" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="13sp"
+                    android:textColor="@color/muted" android:lineSpacingExtra="2dp"/>
+                <com.recall.ui.Sparkline android:id="@+id/pSpark"
+                    android:layout_width="match_parent" android:layout_height="86dp"
+                    android:layout_marginTop="14dp"/>
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="SESSIONS, LAST 12 WEEKS" android:textSize="11sp"
+                    android:textStyle="bold" android:letterSpacing="0.16"
+                    android:textColor="@color/faint" android:paddingTop="34dp"
+                    android:paddingBottom="12dp"/>
+                <com.recall.ui.Bars android:id="@+id/pBars"
+                    android:layout_width="match_parent" android:layout_height="70dp"/>
+                <TextView android:id="@+id/pBarsNote" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="12sp"
+                    android:textColor="@color/faint" android:paddingTop="10dp"/>
+
+                <LinearLayout android:id="@+id/pStats" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:paddingTop="30dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

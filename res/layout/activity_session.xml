@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg" android:fitsSystemWindows="true">
+
+<LinearLayout android:id="@+id/chatHost"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingLeft="8dp" android:paddingRight="8dp"
+        android:paddingTop="8dp" android:paddingBottom="8dp"
+        android:background="@color/bg">
+        <TextView android:id="@+id/btnBack" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Back"
+            android:textSize="14sp" android:textColor="@color/muted"
+            android:paddingLeft="14dp" android:paddingRight="14dp"
+            android:paddingTop="10dp" android:paddingBottom="10dp"/>
+        <TextView android:id="@+id/sessTitle" android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:textSize="14sp" android:textColor="@color/text"
+            android:gravity="center" android:maxLines="1" android:ellipsize="end"/>
+        <TextView android:id="@+id/btnEnd" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="End"
+            android:textSize="14sp" android:textStyle="bold" android:textColor="@color/accent"
+            android:paddingLeft="14dp" android:paddingRight="14dp"
+            android:paddingTop="10dp" android:paddingBottom="10dp"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <ListView android:id="@+id/chat" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1"
+        android:divider="@null" android:dividerHeight="0dp"
+        android:stackFromBottom="true" android:transcriptMode="normal"
+        android:scrollbars="none" android:clipToPadding="false"
+        android:paddingLeft="14dp" android:paddingRight="14dp"
+        android:paddingTop="12dp" android:paddingBottom="6dp"
+        android:cacheColorHint="#00000000"/>
+
+    <TextView android:id="@+id/retry" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:visibility="gone"
+        android:background="@drawable/retry_bg" android:textSize="13sp"
+        android:textColor="@color/bad" android:lineSpacingExtra="3dp"
+        android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
+        android:layout_marginBottom="6dp"
+        android:paddingLeft="16dp" android:paddingRight="16dp"
+        android:paddingTop="12dp" android:paddingBottom="12dp"/>
+
+    <TextView android:id="@+id/thinking" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="thinking"
+        android:textSize="13sp" android:textColor="@color/muted"
+        android:paddingLeft="24dp" android:paddingBottom="6dp" android:visibility="gone"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="bottom"
+        android:paddingLeft="12dp" android:paddingRight="12dp"
+        android:paddingTop="6dp" android:paddingBottom="12dp">
+        <EditText android:id="@+id/input" android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:background="@drawable/input_bg" android:hint="Answer, or ask"
+            android:textColorHint="@color/faint" android:textColor="@color/text"
+            android:textSize="15sp" android:maxLines="5" android:minHeight="46dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:paddingLeft="18dp" android:paddingRight="14dp"
+            android:paddingTop="12dp" android:paddingBottom="12dp"/>
+        <TextView android:id="@+id/btnMic" android:layout_width="46dp"
+            android:layout_height="46dp" android:text="Mic"
+            android:textSize="11sp" android:textColor="@color/muted" android:gravity="center"
+            android:background="@drawable/mic_bg" android:layout_marginLeft="6dp"/>
+        <TextView android:id="@+id/btnSend" android:layout_width="46dp"
+            android:layout_height="46dp" android:text="Go"
+            android:textSize="13sp" android:textStyle="bold"
+            android:textColor="@color/onAccent" android:gravity="center"
+            android:background="@drawable/send_bg" android:layout_marginLeft="6dp"/>
+    </LinearLayout>
+</LinearLayout>
+
+    <View android:id="@+id/resScrim" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:background="#000000"
+        android:alpha="0" android:visibility="gone"/>
+
+    <ScrollView android:id="@+id/results" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:visibility="invisible"
+        android:scrollbars="none" android:elevation="14dp"
+        android:background="@drawable/sheet_bg" android:layout_gravity="bottom">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="24dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SESSION SAVED" android:textSize="11sp" android:textStyle="bold"
+                android:letterSpacing="0.16" android:textColor="@color/good"
+                android:paddingTop="8dp"/>
+            <TextView android:id="@+id/resTitle" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="26sp"
+                android:textColor="@color/text" android:lineSpacingExtra="2dp"
+                android:paddingTop="10dp"/>
+            <TextView android:id="@+id/resSummary" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="15sp"
+                android:textColor="@color/muted" android:lineSpacingExtra="4dp"
+                android:paddingTop="12dp"/>
+
+            <TextView android:id="@+id/resMovedHead" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="WHAT MOVED"
+                android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.16"
+                android:textColor="@color/faint" android:paddingTop="28dp"
+                android:paddingBottom="4dp"/>
+            <LinearLayout android:id="@+id/resMoved" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"/>
+
+            <TextView android:id="@+id/resGapsHead" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="STILL OPEN"
+                android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.16"
+                android:textColor="@color/faint" android:paddingTop="22dp"
+                android:paddingBottom="8dp" android:visibility="gone"/>
+            <TextView android:id="@+id/resGaps" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/warm" android:lineSpacingExtra="4dp"
+                android:visibility="gone"/>
+
+            <TextView android:id="@+id/resClosedHead" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="CLEARED UP"
+                android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.16"
+                android:textColor="@color/faint" android:paddingTop="22dp"
+                android:paddingBottom="8dp" android:visibility="gone"/>
+            <TextView android:id="@+id/resClosed" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/good" android:lineSpacingExtra="4dp"
+                android:visibility="gone"/>
+
+            <TextView android:id="@+id/resDone" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Done"
+                android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/onAccent" android:gravity="center"
+                android:background="@drawable/btn_primary"
+                android:paddingTop="15dp" android:paddingBottom="15dp"
+                android:layout_marginTop="32dp"/>
+            <TextView android:id="@+id/resMore" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Keep going"
+                android:textSize="14sp" android:textColor="@color/muted" android:gravity="center"
+                android:background="@drawable/btn_ghost"
+                android:paddingTop="13dp" android:paddingBottom="13dp"
+                android:layout_marginTop="9dp" android:layout_marginBottom="12dp"/>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recall</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bar"></div>
+  <main>
+    <p class="kicker">For one student</p>
+    <h1>Recall</h1>
+    <p class="pitch">A tutor that remembers you.</p>
+    <p class="lead">Recall keeps a local model of what you have studied: which concepts you have hit, how solid each one is, and the specific misunderstandings you have shown. A session opens on the thing that is due. The tutor speaks first. Ending the session writes the result back into SQLite on the phone.</p>
+    <p class="stack">Java, Android, SQLite, Gemini or Groq. No server and no account.</p>
+    <p class="lead">The API key is yours. Paste a free Gemini or Groq key in the app. It stays on the device and is sent only to the provider you pick. It is not in the source, the APK, or this page.</p>
+    <a class="download" href="#build">Download APK</a>
+    <p class="fine">No release binary is attached. <code>bash build.sh</code> writes <code>Recall.apk</code>. This button does not fetch a file, because a download that is not the release asset would be the wrong binary.</p>
+
+    <h2>What it does</h2>
+    <ol>
+      <li><strong>Home</strong> names one target from the model on the phone.</li>
+      <li><strong>Session</strong> opens with the tutor, then you answer. Voice uses the system recognizer.</li>
+      <li><strong>End</strong> asks the model for a structured update and folds it into SQLite. If that call fails, the transcript can still be kept.</li>
+      <li><strong>Mind and Progress</strong> show the model back to you: confidence, gaps, and whether a line is even worth drawing yet.</li>
+    </ol>
+
+    <h2 id="build">Build</h2>
+    <p>JDK 21 (<code>JAVA_HOME</code>, with <code>javac</code> and <code>jar</code>) and an Android SDK (<code>ANDROID_HOME</code>) with build-tools 36.0.0 and <code>platforms/android-36</code>. A debug keystore at <code>~/.android/debug.keystore</code> signs the APK.</p>
+    <p><code>bash build.sh</code></p>
+    <p>The live tutoring round-trip has not been verified. A rejected key is how the app shows that the phone reached Gemini or Groq. Paste your own key on the device and use Test connection.</p>
+    <p><a href="https://github.com/ashwin-subspace/recall">Source on GitHub</a></p>
+    <hr class="rule">
+    <p class="author">Ashwin R. MIT License.</p>
+  </main>
+</body>
+</html>

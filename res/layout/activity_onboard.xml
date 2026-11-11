@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg"
+    android:fitsSystemWindows="true" android:padding="26dp">
+
+    <LinearLayout android:id="@+id/dots" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:paddingTop="14dp" android:paddingBottom="30dp"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/obTitle" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="32sp"
+                android:textColor="@color/text" android:lineSpacingExtra="3dp"/>
+            <TextView android:id="@+id/obBody" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:textColor="@color/muted" android:lineSpacingExtra="6dp"
+                android:paddingTop="16dp"/>
+
+            <LinearLayout android:id="@+id/obStep2" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:visibility="gone" android:paddingTop="24dp">
+                <Spinner android:id="@+id/obProvider" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/input_bg"
+                    android:paddingLeft="12dp" android:paddingRight="12dp"
+                    android:paddingTop="6dp" android:paddingBottom="6dp"/>
+                <TextView android:id="@+id/obHint" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="13sp"
+                    android:textColor="@color/accent" android:paddingTop="14dp"
+                    android:paddingBottom="10dp"/>
+                <EditText android:id="@+id/obKey" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/input_bg"
+                    android:hint="paste your free key" android:textColorHint="@color/faint"
+                    android:textColor="@color/text" android:textSize="14sp" android:maxLines="3"
+                    android:inputType="textVisiblePassword|textMultiLine"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:paddingTop="14dp" android:paddingBottom="14dp"/>
+                <TextView android:id="@+id/obTest" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:text="Test this key"
+                    android:textSize="14sp" android:textColor="@color/muted"
+                    android:gravity="center" android:background="@drawable/btn_ghost"
+                    android:paddingTop="13dp" android:paddingBottom="13dp"
+                    android:layout_marginTop="10dp"/>
+                <TextView android:id="@+id/obTestOut" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="13sp"
+                    android:textColor="@color/muted" android:lineSpacingExtra="3dp"
+                    android:paddingTop="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/obStep3" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:visibility="gone" android:paddingTop="24dp">
+                <EditText android:id="@+id/obName" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/input_bg"
+                    android:hint="What should I call you?" android:textColorHint="@color/faint"
+                    android:textColor="@color/text" android:textSize="16sp" android:maxLines="1"
+                    android:inputType="textCapWords"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:paddingTop="14dp" android:paddingBottom="14dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="NUDGE ME AT" android:textSize="11sp" android:textStyle="bold"
+                    android:letterSpacing="0.14" android:textColor="@color/faint"
+                    android:paddingTop="24dp" android:paddingBottom="8dp"/>
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:background="@drawable/input_bg"
+                    android:paddingLeft="18dp" android:paddingRight="12dp"
+                    android:paddingTop="6dp" android:paddingBottom="6dp">
+                    <TextView android:id="@+id/obTime" android:layout_width="0dp"
+                        android:layout_weight="1" android:layout_height="wrap_content"
+                        android:textSize="16sp" android:textColor="@color/text"
+                        android:paddingTop="12dp" android:paddingBottom="12dp"/>
+                    <Switch android:id="@+id/obRemind" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView android:id="@+id/obNext" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Next"
+        android:textSize="15sp" android:textStyle="bold" android:textColor="@color/onAccent"
+        android:gravity="center" android:background="@drawable/btn_primary"
+        android:paddingTop="15dp" android:paddingBottom="15dp"/>
+    <TextView android:id="@+id/obSkip" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Skip for now"
+        android:textSize="14sp" android:textColor="@color/faint" android:gravity="center"
+        android:paddingTop="16dp" android:paddingBottom="6dp"/>
+</LinearLayout>

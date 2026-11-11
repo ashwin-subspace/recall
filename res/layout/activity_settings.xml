@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg" android:fitsSystemWindows="true"
+    android:scrollbars="none">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="22dp">
+
+        <TextView android:id="@+id/btnBack" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Back"
+            android:textSize="14sp" android:textColor="@color/muted"
+            android:paddingTop="8dp" android:paddingBottom="18dp" android:paddingRight="20dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Setup" android:textSize="26sp" android:textStyle="bold"
+            android:textColor="@color/text" android:paddingBottom="6dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Recall talks to the model directly from this phone. Your key is stored in this app&apos;s private storage and is sent nowhere else. Free tiers may log what you send, so keep anything private off it."
+            android:textSize="13sp" android:textColor="@color/faint"
+            android:lineSpacingExtra="3dp" android:paddingBottom="22dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="PROVIDER" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingBottom="8dp"/>
+        <Spinner android:id="@+id/provider" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/input_bg"
+            android:paddingLeft="12dp" android:paddingRight="12dp"
+            android:paddingTop="6dp" android:paddingBottom="6dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="22dp" android:text="API KEY" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingBottom="8dp"/>
+        <TextView android:id="@+id/keyHint" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="12sp"
+            android:textColor="@color/accent" android:paddingBottom="10dp"/>
+        <EditText android:id="@+id/key" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/input_bg"
+            android:hint="paste your free key" android:textColorHint="@color/faint"
+            android:textColor="@color/text" android:textSize="14sp" android:maxLines="3"
+            android:inputType="textVisiblePassword|textMultiLine"
+            android:paddingLeft="16dp" android:paddingRight="16dp"
+            android:paddingTop="14dp" android:paddingBottom="14dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="YOUR NAME" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingTop="22dp" android:paddingBottom="8dp"/>
+        <EditText android:id="@+id/who" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/input_bg"
+            android:hint="What should I call you?" android:textColorHint="@color/faint"
+            android:textColor="@color/text" android:textSize="15sp" android:maxLines="1"
+            android:inputType="textCapWords"
+            android:paddingLeft="16dp" android:paddingRight="16dp"
+            android:paddingTop="14dp" android:paddingBottom="14dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="MODEL" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingTop="22dp" android:paddingBottom="8dp"/>
+        <Spinner android:id="@+id/model" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/input_bg"
+            android:paddingLeft="12dp" android:paddingRight="12dp"
+            android:paddingTop="6dp" android:paddingBottom="6dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="APPEARANCE" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingTop="26dp" android:paddingBottom="8dp"/>
+        <Spinner android:id="@+id/theme" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/input_bg"
+            android:paddingLeft="12dp" android:paddingRight="12dp"
+            android:paddingTop="6dp" android:paddingBottom="6dp"/>
+        <TextView android:id="@+id/themeNote" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="12sp"
+            android:textColor="@color/faint" android:paddingTop="8dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="DAILY NUDGE" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingTop="26dp" android:paddingBottom="8dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/input_bg"
+            android:paddingLeft="18dp" android:paddingRight="12dp"
+            android:paddingTop="6dp" android:paddingBottom="6dp">
+            <TextView android:id="@+id/remindTime" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_height="wrap_content"
+                android:textSize="16sp" android:textColor="@color/text"
+                android:paddingTop="12dp" android:paddingBottom="12dp"/>
+            <Switch android:id="@+id/remindOn" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="One a day at most, and only when something you learned is actually going cold. It names the concept, not just the app."
+            android:textSize="12sp" android:textColor="@color/faint"
+            android:lineSpacingExtra="2dp" android:paddingTop="8dp"/>
+
+        <TextView android:id="@+id/btnSave" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Save"
+            android:textSize="15sp" android:textStyle="bold" android:textColor="@color/onAccent"
+            android:gravity="center" android:background="@drawable/btn_primary"
+            android:paddingTop="15dp" android:paddingBottom="15dp"
+            android:layout_marginTop="26dp"/>
+        <TextView android:id="@+id/btnTest" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Test connection"
+            android:textSize="14sp" android:textColor="@color/muted" android:gravity="center"
+            android:background="@drawable/btn_ghost"
+            android:paddingTop="13dp" android:paddingBottom="13dp"
+            android:layout_marginTop="9dp"/>
+        <TextView android:id="@+id/testOut" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="13sp"
+            android:textColor="@color/muted" android:lineSpacingExtra="3dp"
+            android:paddingTop="12dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="YOUR DATA" android:textSize="11sp" android:textStyle="bold"
+            android:letterSpacing="0.14" android:textColor="@color/faint"
+            android:paddingTop="26dp" android:paddingBottom="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Everything Recall knows lives on this phone only. There is no account and no sync, so an export is the only copy that survives a lost phone."
+            android:textSize="12sp" android:textColor="@color/faint"
+            android:lineSpacingExtra="2dp" android:paddingBottom="12dp"/>
+        <TextView android:id="@+id/btnExport" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Export everything"
+            android:textSize="14sp" android:textColor="@color/muted" android:gravity="center"
+            android:background="@drawable/btn_ghost"
+            android:paddingTop="13dp" android:paddingBottom="13dp"/>
+        <TextView android:id="@+id/btnImport" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Restore from a file"
+            android:textSize="14sp" android:textColor="@color/muted" android:gravity="center"
+            android:background="@drawable/btn_ghost"
+            android:paddingTop="13dp" android:paddingBottom="13dp"
+            android:layout_marginTop="9dp"/>
+        <TextView android:id="@+id/backupOut" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="13sp"
+            android:textColor="@color/muted" android:paddingTop="10dp"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/line" android:layout_marginTop="34dp"/>
+        <TextView android:id="@+id/btnWipe" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Forget everything about me"
+            android:textSize="14sp" android:textColor="@color/bad" android:gravity="center"
+            android:paddingTop="20dp" android:paddingBottom="20dp"/>
+    </LinearLayout>
+</ScrollView>

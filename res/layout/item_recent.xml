@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:background="@drawable/card"
+    android:padding="18dp" android:layout_marginBottom="12dp">
+    <TextView android:id="@+id/rTitle" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="15sp"
+        android:textStyle="bold" android:textColor="@color/text"/>
+    <TextView android:id="@+id/rSummary" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="13sp"
+        android:textColor="@color/muted" android:lineSpacingExtra="2dp" android:paddingTop="5dp"/>
+    <TextView android:id="@+id/rWhen" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="11sp"
+        android:textColor="@color/faint" android:paddingTop="7dp"/>
+</LinearLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <FrameLayout android:id="@+id/homeHost"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/bg" android:fitsSystemWindows="true">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:paddingLeft="22dp" android:paddingRight="14dp"
+                android:paddingTop="14dp" android:paddingBottom="6dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:text="Recall"
+                    android:textSize="21sp" android:textStyle="bold" android:textColor="@color/text"/>
+                <TextView android:id="@+id/btnMind" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Mind"
+                    android:textSize="14sp" android:textColor="@color/muted"
+                    android:paddingLeft="14dp" android:paddingRight="14dp"
+                    android:paddingTop="10dp" android:paddingBottom="10dp"/>
+                <TextView android:id="@+id/btnSettings" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Setup"
+                    android:textSize="14sp" android:textColor="@color/muted"
+                    android:paddingLeft="12dp" android:paddingRight="6dp"
+                    android:paddingTop="10dp" android:paddingBottom="10dp"/>
+            </LinearLayout>
+
+            <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+                android:layout_weight="1" android:scrollbars="none"
+                android:paddingLeft="18dp" android:paddingRight="18dp"
+                android:clipToPadding="false" android:paddingBottom="96dp">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:gravity="center_vertical" android:paddingTop="6dp"
+                        android:paddingBottom="14dp">
+                        <TextView android:id="@+id/greeting" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Welcome back."
+                            android:textSize="15sp" android:textColor="@color/muted"
+                            android:paddingLeft="4dp"/>
+                        <TextView android:id="@+id/streak" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:visibility="gone"
+                            android:textSize="12sp" android:textColor="@color/warm"
+                            android:background="@drawable/pill" android:layout_marginLeft="10dp"
+                            android:paddingLeft="10dp" android:paddingRight="10dp"
+                            android:paddingTop="3dp" android:paddingBottom="3dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="vertical"
+                        android:background="@drawable/card_accent" android:padding="22dp">
+                        <TextView android:id="@+id/focusKicker" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="TODAY&apos;S FOCUS"
+                            android:textSize="11sp" android:textColor="@color/accent"
+                            android:letterSpacing="0.16" android:textStyle="bold"/>
+                        <TextView android:id="@+id/focusTitle" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:text="Let&apos;s begin"
+                            android:textSize="25sp" android:textColor="@color/text"
+                            android:lineSpacingExtra="2dp" android:paddingTop="10dp"/>
+                        <TextView android:id="@+id/focusMeta" android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/muted"
+                            android:paddingTop="7dp"/>
+                        <TextView android:id="@+id/focusNote" android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/warm"
+                            android:lineSpacingExtra="3dp"
+                            android:paddingTop="14dp" android:visibility="gone"/>
+                        <TextView android:id="@+id/btnStart" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:text="Start session"
+                            android:textSize="15sp" android:textStyle="bold"
+                            android:textColor="@color/onAccent" android:gravity="center"
+                            android:background="@drawable/btn_primary"
+                            android:paddingTop="15dp" android:paddingBottom="15dp"
+                            android:layout_marginTop="20dp"/>
+                        <TextView android:id="@+id/btnFree" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:text="Something else"
+                            android:textSize="14sp" android:textColor="@color/muted"
+                            android:gravity="center" android:background="@drawable/btn_ghost"
+                            android:paddingTop="13dp" android:paddingBottom="13dp"
+                            android:layout_marginTop="9dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/statRow" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="horizontal"
+                        android:paddingTop="16dp" android:paddingBottom="4dp"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/handleWrap" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="bottom"
+            android:orientation="vertical" android:gravity="center_horizontal"
+            android:paddingBottom="16dp">
+            <View android:layout_width="42dp" android:layout_height="4dp"
+                android:background="@drawable/handle_bar"/>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Sessions"
+                android:textSize="12sp" android:textColor="@color/faint"
+                android:paddingTop="7dp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <View android:id="@+id/scrim" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:background="#000000"
+        android:alpha="0" android:visibility="gone"/>
+
+    <View android:id="@+id/dragCatcher" android:layout_width="match_parent"
+        android:layout_height="84dp" android:layout_gravity="bottom"/>
+
+    <LinearLayout android:id="@+id/sheet" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_gravity="bottom"
+        android:orientation="vertical" android:background="@drawable/sheet_bg"
+        android:visibility="invisible" android:elevation="12dp">
+
+        <LinearLayout android:id="@+id/sheetGrip" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:gravity="center_horizontal" android:paddingTop="12dp"
+            android:paddingBottom="4dp">
+            <View android:layout_width="42dp" android:layout_height="4dp"
+                android:background="@drawable/handle_bar"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingLeft="24dp" android:paddingRight="14dp"
+            android:paddingTop="10dp" android:paddingBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:text="Sessions"
+                android:textSize="22sp" android:textStyle="bold" android:textColor="@color/text"/>
+            <TextView android:id="@+id/btnCloseSheet" android:layout_width="38dp"
+                android:layout_height="38dp" android:text="✕" android:gravity="center"
+                android:textSize="15sp" android:textColor="@color/muted"
+                android:background="@drawable/close_circle"/>
+        </LinearLayout>
+
+        <EditText android:id="@+id/sheetSearch" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/input_bg"
+            android:hint="Search sessions" android:textColorHint="@color/faint"
+            android:textColor="@color/text" android:textSize="15sp" android:maxLines="1"
+            android:inputType="text" android:imeOptions="actionSearch"
+            android:layout_marginLeft="18dp" android:layout_marginRight="18dp"
+            android:layout_marginBottom="12dp"
+            android:paddingLeft="16dp" android:paddingRight="16dp"
+            android:paddingTop="11dp" android:paddingBottom="11dp"/>
+
+        <TextView android:id="@+id/sheetSub" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="13sp"
+            android:textColor="@color/faint" android:paddingLeft="24dp"
+            android:paddingRight="24dp" android:paddingBottom="12dp"/>
+
+        <ListView android:id="@+id/sessionList" android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1"
+            android:divider="@null" android:dividerHeight="0dp" android:scrollbars="none"
+            android:paddingLeft="18dp" android:paddingRight="18dp"
+            android:clipToPadding="false" android:paddingBottom="24dp"
+            android:cacheColorHint="#00000000"/>
+
+        <TextView android:id="@+id/sheetEmpty" android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1" android:visibility="gone"
+            android:text="No sessions yet. Finish one and it will be waiting here."
+            android:textSize="15sp" android:textColor="@color/muted" android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:paddingLeft="32dp" android:paddingRight="32dp" android:paddingBottom="48dp"/>
+    </LinearLayout>
+</FrameLayout>

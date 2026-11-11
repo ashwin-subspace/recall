@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wRoot"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@drawable/card"
+    android:padding="16dp">
+    <TextView android:id="@+id/wKicker" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="TODAY&apos;S FOCUS"
+        android:textSize="10sp" android:textStyle="bold" android:textColor="@color/accent"/>
+    <TextView android:id="@+id/wTitle" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1"
+        android:textSize="19sp" android:textColor="@color/text"
+        android:maxLines="3" android:ellipsize="end" android:paddingTop="6dp"/>
+    <TextView android:id="@+id/wMeta" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="11sp"
+        android:textColor="@color/faint" android:maxLines="1" android:ellipsize="end"/>
+</LinearLayout>

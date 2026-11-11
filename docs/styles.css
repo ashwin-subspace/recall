@@ -1,0 +1,130 @@
+:root {
+  --bg: #14120e;
+  --ink: #efeae2;
+  --muted: #c9bfb2;
+  --faint: #9a8f80;
+  --line: rgba(239, 234, 226, 0.16);
+  --teal: #2a9d8f;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.bar {
+  height: 7px;
+  background: var(--teal);
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 4.75rem 1.4rem 5.5rem;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+h1, h2 {
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  margin: 0.35rem 0 0.8rem;
+  font-size: 5.1rem;
+  line-height: 0.9;
+}
+
+.pitch {
+  margin: 0;
+  max-width: 18em;
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.85rem;
+  line-height: 1.25;
+}
+
+.lead, .note, ol, p { color: var(--muted); }
+
+.lead { margin: 1.6rem 0 0; font-size: 1.05rem; }
+
+.stack {
+  margin: 1.4rem 0 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.download {
+  display: inline-block;
+  margin: 2.2rem 0 0.7rem;
+  padding: 0.95rem 1.35rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.download:hover,
+.download:focus {
+  background: #fff;
+  color: #000;
+}
+
+.fine {
+  margin: 0;
+  max-width: 36em;
+  color: var(--faint);
+  font-size: 0.92rem;
+}
+
+h2 {
+  margin: 3.4rem 0 0.8rem;
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+ol { margin: 0; padding-left: 1.2rem; }
+li { margin: 0.45rem 0; }
+li strong { color: var(--ink); font-weight: 650; }
+
+a { color: var(--ink); }
+a:hover { color: #fff; }
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+  color: var(--ink);
+}
+
+.rule {
+  margin: 3rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.author {
+  margin: 1.2rem 0 0;
+  color: var(--faint);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  main { padding-top: 3.2rem; }
+  h1 { font-size: 3.6rem; }
+  .pitch { font-size: 1.5rem; }
+}
